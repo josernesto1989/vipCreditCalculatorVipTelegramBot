@@ -38,6 +38,9 @@ def help(update: Update, context: CallbackContext):
   text = "Los comandos disponibles son:\n"
   text = text + "\n/help para este menú"
   text = text + "\n/cred <servicio> <cantidad de creditos>"
+  text = text + "\nLos servicios disponibles son"
+  for key in creditsValues:
+    text = text + "\n"+key
   update.message.reply_text(text)
 
 def calc(update: Update, context: CallbackContext):
