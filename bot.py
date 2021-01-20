@@ -14,15 +14,15 @@ PORT = int(os.environ.get('PORT', 5000))
 TOKEN = '1572067631:AAH9Ubb4SZ9K-OJXyF3uUzrcvwxJeLe_8kU'
 
 
-# dolarValue = 40.0
+dolarValue = 40.0
 
-# creditsValues = {
-#     "magma": 41.75,
-#     "z3x":10.0
-# }
+creditsValues = {
+    "magma": 41.75,
+    "z3x":10.0
+}
 
-# def calculate(box,value):
-#   return creditsValues[box]*value
+def calculate(box,value):
+  return creditsValues[box]*value
 
 def start(update: Update, context: CallbackContext):
   update.message.reply_text('hola')
