@@ -17,9 +17,14 @@ TOKEN = '1572067631:AAH9Ubb4SZ9K-OJXyF3uUzrcvwxJeLe_8kU'
 dolarValue = 40.0
 
 creditsValues = {
-    "magma": 41.75,
-    "z3x":10.0
+    "magma": 52.20,
+    "z3x":56.9,
+    "oct":5.95,
+    "chim": 6.01,
+    "samst":68,
+    "samcr":50    
 }
+
 
 def calculate(box,value):
   return creditsValues[box]*value
