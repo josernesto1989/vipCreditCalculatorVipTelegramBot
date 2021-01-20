@@ -40,14 +40,15 @@ def calc(update: Update, context: CallbackContext):
   message = "Comando incorrecto"
   if len(words)<3:
     update.message.reply_text(message)
-  elif not(words[1] in creditsValues):
-    update.message.reply_text("no se ecuentra el servicio") #poner lista de servicios
-  else:
+  elif (words[1] in creditsValues):
     try:
         x = float(words[2])
         update.message.reply_text(str(calculate(words[1],x))+"CUP")
     except:
-       update.message.reply_text(words[2]+' deberia ser un numero')
+       update.message.reply_text(words[2]+' deberia ser un numero')    
+  else:
+    update.message.reply_text("no se ecuentra el servicio") #poner lista de servicios
+    
 
       
 def main():
