@@ -35,19 +35,20 @@ def help(update: Update, context: CallbackContext):
   text = text + "\n/cred <servicio> <cantidad de creditos>"
   update.message.reply_text(text)
 
-# def calc(update: Update, context: CallbackContext):
-#   words = update.message['text'].split()
-#   message = "Comando incorrecto"
-#   if len(words)>3:
-#     update.message.reply_text(message)
-#   elif not words[1] in creditsValues:
-#     update.message.reply_text("no se ecuentra el servicio") #poner lista de servicios
-#   else:
-#     try:
-#         x = float(words[2])
-#         update.message.reply_text(str(calculate(words[1],x))+"CUP")
-#     except:
-#        update.message.reply_text(words[2]+' deberia ser un numero')
+def calc(update: Update, context: CallbackContext):
+  words = update.message['text'].split()
+  message = "Comando incorrecto"
+  update.message.reply_text('deberia ser un numero')
+  # if len(words)>3:
+  #   update.message.reply_text(message)
+  # elif not words[1] in creditsValues:
+  #   update.message.reply_text("no se ecuentra el servicio") #poner lista de servicios
+  # else:
+  #   try:
+  #       x = float(words[2])
+  #       update.message.reply_text(str(calculate(words[1],x))+"CUP")
+  #   except:
+  #      update.message.reply_text(words[2]+' deberia ser un numero')
 
       
 def main():
@@ -58,7 +59,7 @@ def main():
 
   dp.add_handler(CommandHandler('start', start))
   dp.add_handler(CommandHandler('help', help))
-  # dp.add_handler(CommandHandler('credit', calc))
+  dp.add_handler(CommandHandler('credit', calc))
 
   updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
