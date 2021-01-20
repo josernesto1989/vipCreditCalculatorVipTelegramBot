@@ -51,49 +51,7 @@ def calc(update: Update, context: CallbackContext):
     except:
        update.message.reply_text(words[2]+' deberia ser un numero')
 
-        
-
-
-
-########################### GESTION DE USUARIOS #################################
-def addUser(update: Update, context: CallbackContext):
-  words = update.message['text'].split()
-  message = "Debe insertar el nombre del usuario"
-  if len(words)>1:    
-    x, words = words
-    words = ''.join(words)
-    if findInAsist(words):
-      message = "Ya existe el usuario \""+words+"\""
-    else:
-      asistencia.append([words,'A'])
-      db.add_item(words)
-      message = "El usuario \""+words+"\" ha sido agregado"
-  update.message.reply_text(message)
-
-def findInAsist(user):
-  for i in asistencia:
-    if i[0] == user:
-      return True
-  return False
-
-def removeUser(update: Update, context: CallbackContext):
-  words = update.message['text'].split()
-  message = "Debe insertar el nombre del usuario"
-  if len(words)>1:    
-    x, words = words
-    words = ''.join(words)
-    if findInAsist(words):
-      for i in range(len(asistencia)):
-        if asistencia[i][0] == words:
-          asistencia.pop(i)
-          db.delete_item(words)
-          message = "El usuario \""+words+"\" fue eliminado"
-    else:
-      message = "El usuario \""+words+"\" no existe"
-  update.message.reply_text(message)
-  
-
-
+      
 def main():
   ############################# Handlers #########################################
   updater = Updater(TOKEN, use_context=True)
