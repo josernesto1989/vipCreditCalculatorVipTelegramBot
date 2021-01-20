@@ -38,7 +38,6 @@ def help(update: Update, context: CallbackContext):
 def calc(update: Update, context: CallbackContext):
   words = update.message['text'].split()
   message = "Comando incorrecto"
-  update.message.reply_text(len(words))
   if len(words)<2:
     update.message.reply_text(message)
   elif not words[1] in creditsValues:
