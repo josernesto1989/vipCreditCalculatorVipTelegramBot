@@ -7,49 +7,47 @@ from telegram import Update
 from telegram.ext import CallbackContext
 from telegram.ext import CommandHandler, CallbackQueryHandler
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-from dbhelper import DBHelper
 ############################### Bot ############################################
 
 onServer=True
 PORT = int(os.environ.get('PORT', 5000))
 TOKEN = '1572067631:AAH9Ubb4SZ9K-OJXyF3uUzrcvwxJeLe_8kU'
 
-db = DBHelper()
 
-dolarValue = 40.0
+# dolarValue = 40.0
 
-creditsValues = {
-    "magma": 41.75,
-    "z3x":10.0
-}
+# creditsValues = {
+#     "magma": 41.75,
+#     "z3x":10.0
+# }
 
-def calculate(box,value):
-  return creditsValues[box]*value
+# def calculate(box,value):
+#   return creditsValues[box]*value
 
 def start(update: Update, context: CallbackContext):
   update.message.reply_text('hola')
   # update.message.reply_text(main_menu_message(),
   #                           reply_markup=main_menu_keyboard())
 
-def help(update: Update, context: CallbackContext):
-  text = "Los comandos disponibles son:\n"
-  text = text + "\n/help para este menú"
-  text = text + "\n/cred <servicio> <cantidad de creditos>"
-  update.message.reply_text(text)
+# def help(update: Update, context: CallbackContext):
+#   text = "Los comandos disponibles son:\n"
+#   text = text + "\n/help para este menú"
+#   text = text + "\n/cred <servicio> <cantidad de creditos>"
+#   update.message.reply_text(text)
 
-def calc(update: Update, context: CallbackContext):
-  words = update.message['text'].split()
-  message = "Comando incorrecto"
-  if len(words)>3:
-    update.message.reply_text(message)
-  elif not words[1] in creditsValues:
-    update.message.reply_text("no se ecuentra el servicio") #poner lista de servicios
-  else:
-    try:
-        x = float(words[2])
-        update.message.reply_text(str(calculate(words[1],x))+"CUP")
-    except:
-       update.message.reply_text(words[2]+' deberia ser un numero')
+# def calc(update: Update, context: CallbackContext):
+#   words = update.message['text'].split()
+#   message = "Comando incorrecto"
+#   if len(words)>3:
+#     update.message.reply_text(message)
+#   elif not words[1] in creditsValues:
+#     update.message.reply_text("no se ecuentra el servicio") #poner lista de servicios
+#   else:
+#     try:
+#         x = float(words[2])
+#         update.message.reply_text(str(calculate(words[1],x))+"CUP")
+#     except:
+#        update.message.reply_text(words[2]+' deberia ser un numero')
 
       
 def main():
@@ -59,8 +57,8 @@ def main():
   dp = updater.dispatcher
 
   dp.add_handler(CommandHandler('start', start))
-  dp.add_handler(CommandHandler('help', help))
-  dp.add_handler(CommandHandler('credit', calc))
+  # dp.add_handler(CommandHandler('help', help))
+  # dp.add_handler(CommandHandler('credit', calc))
 
   updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
