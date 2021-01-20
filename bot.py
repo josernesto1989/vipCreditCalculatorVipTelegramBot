@@ -38,7 +38,7 @@ def help(update: Update, context: CallbackContext):
 def calc(update: Update, context: CallbackContext):
   words = update.message['text'].split()
   message = "Comando incorrecto"
-  if len(words)>3:
+  if len(words)<3:
     update.message.reply_text(message)
   elif not words[1] in creditsValues:
     update.message.reply_text("no se ecuentra el servicio") #poner lista de servicios
