@@ -1,1 +1,1 @@
-web: python3 vipcellbot.py
+web: python3 bot.py
