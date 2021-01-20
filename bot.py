@@ -29,11 +29,11 @@ def start(update: Update, context: CallbackContext):
   # update.message.reply_text(main_menu_message(),
   #                           reply_markup=main_menu_keyboard())
 
-# def help(update: Update, context: CallbackContext):
-#   text = "Los comandos disponibles son:\n"
-#   text = text + "\n/help para este menú"
-#   text = text + "\n/cred <servicio> <cantidad de creditos>"
-#   update.message.reply_text(text)
+def help(update: Update, context: CallbackContext):
+  text = "Los comandos disponibles son:\n"
+  text = text + "\n/help para este menú"
+  text = text + "\n/cred <servicio> <cantidad de creditos>"
+  update.message.reply_text(text)
 
 # def calc(update: Update, context: CallbackContext):
 #   words = update.message['text'].split()
@@ -57,7 +57,7 @@ def main():
   dp = updater.dispatcher
 
   dp.add_handler(CommandHandler('start', start))
-  # dp.add_handler(CommandHandler('help', help))
+  dp.add_handler(CommandHandler('help', help))
   # dp.add_handler(CommandHandler('credit', calc))
 
   updater.start_webhook(listen="0.0.0.0",
