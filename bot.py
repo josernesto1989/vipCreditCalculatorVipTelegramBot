@@ -36,8 +36,8 @@ def help(update: Update, context: CallbackContext):
   update.message.reply_text(text)
 
 def calc(update: Update, context: CallbackContext):
-  words = update.message['text'].split()
-  message = "Comando incorrecto"
+  # words = update.message['text'].split()
+  # message = "Comando incorrecto"
   update.message.reply_text('deberia ser un numero')
   # if len(words)>3:
   #   update.message.reply_text(message)
