@@ -59,7 +59,7 @@ def main():
 
   dp.add_handler(CommandHandler('start', start))
   dp.add_handler(CommandHandler('help', help))
-  dp.add_handler(CommandHandler('credit', calc))
+  dp.add_handler(CommandHandler('cred', calc))
 
   updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
