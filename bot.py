@@ -2,6 +2,7 @@
 #!/usr/bin/python3
 import os
 import sys
+import math
 from telegram.ext import Updater
 from telegram import Update
 from telegram.ext import CallbackContext
@@ -27,7 +28,7 @@ creditsValues = {
 
 
 def calculate(box,value):
-  return creditsValues[box]*value
+  return math.ceil(creditsValues[box]*value)
 
 def start(update: Update, context: CallbackContext):
   update.message.reply_text('hola')
