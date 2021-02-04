@@ -61,7 +61,7 @@ def calc(update: Update, context: CallbackContext):
     
 
 def dolar(update: Update, context: CallbackContext):
-  update.message.reply_text("El precio del dolar es "+dolarValue+"cup")
+  update.message.reply_text("El precio del dolar es "+str(dolarValue)+"cup")
       
 def main():
   ############################# Handlers #########################################
