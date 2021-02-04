@@ -28,6 +28,7 @@ creditsValues = {
 
 
 def calculate(box,value):
+  #return math.ceil(creditsValues[box]*value*dolarValue)
   return math.ceil(creditsValues[box]*value)
 
 def start(update: Update, context: CallbackContext):
