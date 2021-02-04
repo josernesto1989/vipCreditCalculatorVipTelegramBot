@@ -60,7 +60,7 @@ def calc(update: Update, context: CallbackContext):
     update.message.reply_text("no se ecuentra el servicio") #poner lista de servicios
     
 
-def dollar(update: Update, context: CallbackContext):
+def dolar(update: Update, context: CallbackContext):
   update.message.reply_text("El precio del dolar es "+dolarValue+"cup")
       
 def main():
@@ -72,7 +72,7 @@ def main():
   dp.add_handler(CommandHandler('start', start))
   dp.add_handler(CommandHandler('help', help))
   dp.add_handler(CommandHandler('cred', calc))
-  dp.add_handler(CommandHandler('dolar', dollar))
+  dp.add_handler(CommandHandler('dolar', dolar))
 
   updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
