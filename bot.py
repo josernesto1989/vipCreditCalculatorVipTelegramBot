@@ -40,6 +40,7 @@ def help(update: Update, context: CallbackContext):
   text = text + "\n/help para este menú"
   text = text + "\n/cred <servicio> <cantidad de creditos>"
   text = text + "\nLos servicios disponibles son"
+  text = text + "\n/dolar para saber el precio del dolar"
   for key in creditsValues:
     text = text + "\n"+key
   update.message.reply_text(text)
@@ -59,6 +60,8 @@ def calc(update: Update, context: CallbackContext):
     update.message.reply_text("no se ecuentra el servicio") #poner lista de servicios
     
 
+def dollar(update: Update, context: CallbackContext):
+  update.message.reply_text("El precio del dolar es "+dolarValue+"cup")
       
 def main():
   ############################# Handlers #########################################
@@ -69,6 +72,7 @@ def main():
   dp.add_handler(CommandHandler('start', start))
   dp.add_handler(CommandHandler('help', help))
   dp.add_handler(CommandHandler('cred', calc))
+  dp.add_handler(CommandHandler('dolar', dollar))
 
   updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
