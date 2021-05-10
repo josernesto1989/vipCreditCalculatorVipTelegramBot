@@ -18,18 +18,23 @@ TOKEN = '1572067631:AAH9Ubb4SZ9K-OJXyF3uUzrcvwxJeLe_8kU'
 dolarValue = 53.0
 
 creditsValues = {
-    "magma": 52.20,
-    "z3x":56.9,
-    "oct":5.95,
-    "chim": 6.01,
-    "samst":68,
-    "samcr":50    
+    "magma": 1.02,
+    "z3x": 1.145,
+    "oct":0.115,
+    "chim": 0.124,
+    "samst":0.67,
+    "samcr":1.49,
+    "tunlock":0.59,
+    "tmbk":0.69,
+    "motokey":1.09
+    "laelo":0.07,
+    "magict":1.1    
 }
 
 
 def calculate(box,value):
   #return math.ceil(creditsValues[box]*value*dolarValue)
-  return math.ceil(creditsValues[box]*value)
+  return math.ceil(creditsValues[box]*value*dolarValue)
 
 def start(update: Update, context: CallbackContext):
   update.message.reply_text('hola')
