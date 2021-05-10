@@ -26,7 +26,7 @@ creditsValues = {
     "samcr":1.49,
     "tunlock":0.59,
     "tmbk":0.69,
-    "motokey":1.09
+    "motokey":1.09,
     "laelo":0.07,
     "magict":1.1    
 }
