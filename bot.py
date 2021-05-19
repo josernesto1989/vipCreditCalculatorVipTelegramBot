@@ -12,7 +12,7 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 onServer=True
 PORT = int(os.environ.get('PORT', 5000))
-TOKEN = '1572067631:AAH9Ubb4SZ9K-OJXyF3uUzrcvwxJeLe_8kU'
+TOKEN = '1572067631:AAEsliD_kaAcdZ5JZx7OhnPmXAeOqUN_1Pc'
 
 
 dolarValue = 57.0
