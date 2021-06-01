@@ -15,7 +15,7 @@ PORT = int(os.environ.get('PORT', 5000))
 TOKEN = '1572067631:AAEsliD_kaAcdZ5JZx7OhnPmXAeOqUN_1Pc'
 
 
-dolarValue = 60.0
+dolarValue = 65.0
 
 creditsValues = {
     "magma": 1.02,
