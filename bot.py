@@ -29,6 +29,8 @@ creditsValues = {
     "tmbk":0.69,
     "motokey":1.09,
     "laelo":0.07,
+    "suprogen": 1.24,
+    "suprospr": 1.24,
     "magict":1.1    
 }
 
