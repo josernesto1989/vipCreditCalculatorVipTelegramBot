@@ -16,7 +16,7 @@ TOKEN = '1572067631:AAHPjo2HgBnfPKIii7zg9Q63YHTPEt5OKsg'
 #1572067631:AAHPjo2HgBnfPKIii7zg9Q63YHTPEt5OKsg
 
 
-dolarValue = 65.0
+dolarValue = 60.0
 
 creditsValues = {
     "magma": 1.02,
