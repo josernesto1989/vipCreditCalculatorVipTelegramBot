@@ -92,6 +92,7 @@ def main():
   dp.add_handler(CommandHandler('help', help))
   dp.add_handler(CommandHandler('cred', calc))
   dp.add_handler(CommandHandler('dolar', dolar))
+  initializeDB()
 
   updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
