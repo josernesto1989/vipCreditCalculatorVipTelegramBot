@@ -8,12 +8,15 @@ from telegram import Update
 from telegram.ext import CallbackContext
 from telegram.ext import CommandHandler, CallbackQueryHandler
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+from DBFirebaseManager import DBFirebaseManager
 ############################### Bot ############################################
 
 onServer=True
 PORT = int(os.environ.get('PORT', 5000))
 TOKEN = '1572067631:AAHPjo2HgBnfPKIii7zg9Q63YHTPEt5OKsg'
 #1572067631:AAHPjo2HgBnfPKIii7zg9Q63YHTPEt5OKsg
+
+db = DBFirebaseManager()
 
 
 dolarValue = 60.0
@@ -34,6 +37,13 @@ creditsValues = {
     "magict":1.1    
 }
 
+def initializeDB():
+      for key in creditsValues:
+            val = db.getCredByModel(key)
+            if val is None:
+                  db.update(key,0)
+      
+      
 
 def calculate(box,value):
   #return math.ceil(creditsValues[box]*value*dolarValue)
