@@ -96,14 +96,13 @@ def rest(update: Update, context: CallbackContext):
               db.update(words[1],credr)
               update.message.reply_text("ACTUALIZADO CON EXITO")
             else:
-              update.message.reply_text("🚨🚨🚨🚨🚨 los creditos no coinsiden")
+              update.message.reply_text("🚨🚨🚨🚨🚨 los creditos no coinciden")
 
         except:
           update.message.reply_text(words[2]+" y "+words[3]+' deberia ser un numero')    
       else:
         update.message.reply_text("no se ecuentra el servicio") #poner lista de servicios
       
-      update.message.reply_text("El precio del dolar es "+str(dolarValue)+"cup")
       
 def main():
   ############################# Handlers #########################################
