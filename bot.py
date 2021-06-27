@@ -92,11 +92,11 @@ def rest(update: Update, context: CallbackContext):
         try:
             credc = float(words[2])
             credr = float(words[3])
-            if credr == float(credO)-credr:
+            if credr == float(credO)-credc:
               db.update(words[1],credr)
               update.message.reply_text("ACTUALIZADO CON EXITO")
             else:
-              update.message.reply_text("🚨🚨🚨🚨🚨 los creditos no coinciden")
+              update.message.reply_text("🚨🚨🚨🚨🚨 los creditos no coinciden("+float(credO)-credc+")")
 
         except:
           update.message.reply_text(words[2]+" y "+words[3]+' deberia ser un numero')    
@@ -111,7 +111,7 @@ def set(update: Update, context: CallbackContext):
       elif (words[1] in creditsValues):
         try:
             x = float(words[2])
-            db.update(words[1],words[2])
+            db.update(words[1],x)
             update.message.reply_text("Actualizado correctamente")
         except:
           update.message.reply_text(words[2]+' deberia ser un numero')    
