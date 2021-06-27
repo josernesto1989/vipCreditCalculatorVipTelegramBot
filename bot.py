@@ -59,6 +59,9 @@ def help(update: Update, context: CallbackContext):
   text = text + "\n/help para este menú"
   text = text + "\n/cred <servicio> <cantidad de creditos>"
   text = text + "\n/dolar para saber el precio del dolar"
+  text = text + "\n/rest <servicio> <cantidad de cred> <creditos restantes> resta creditos a un servicio y compara
+  text = text + "\n/set <servicio> <cantidad de cred> cambia la cantidad creditos a un servicio
+  text = text + "\n/sum <servicio> <cantidad de cred> adiciona creditos a un servicio
   text = text + "\nLos servicios disponibles son"
   for key in creditsValues:
     text = text + "\n"+key
