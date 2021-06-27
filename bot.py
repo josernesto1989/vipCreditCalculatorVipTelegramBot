@@ -96,7 +96,8 @@ def rest(update: Update, context: CallbackContext):
               db.update(words[1],credr)
               update.message.reply_text("ACTUALIZADO CON EXITO")
             else:
-              update.message.reply_text("🚨🚨🚨🚨🚨 los creditos no coinciden("+(float(credO)-credc)+")")
+              y =(float(credO)-credc)
+              update.message.reply_text("🚨🚨🚨🚨🚨 los creditos no coinciden("+y+")")
 
         except:
           update.message.reply_text(words[2]+" y "+words[3]+' deberia ser un numero')    
