@@ -92,7 +92,7 @@ def rest(update: Update, context: CallbackContext):
         try:
             credc = float(words[2])
             credr = float(words[3])
-            if credr == credO-credr:
+            if credr == float(credO)-credr:
               db.update(words[1],credr)
               update.message.reply_text("ACTUALIZADO CON EXITO")
             else:
