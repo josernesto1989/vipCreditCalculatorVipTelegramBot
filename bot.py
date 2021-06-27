@@ -81,6 +81,29 @@ def calc(update: Update, context: CallbackContext):
 
 def dolar(update: Update, context: CallbackContext):
   update.message.reply_text("El precio del dolar es "+str(dolarValue)+"cup")
+
+def rest(update: Update, context: CallbackContext):
+      words = update.message['text'].split()
+      message = "Comando incorrecto"
+      if len(words)<4:
+        update.message.reply_text(message)
+      elif (words[1] in creditsValues):
+        credO = db.getCredByModel(words[1])
+        try:
+            credc = float(words[2])
+            credr = float(words[3])
+            if credr == credO-credr:
+              db.update(words[1],credr)
+              update.message.reply_text("ACTUALIZADO CON EXITO")
+            else:
+              update.message.reply_text("🚨🚨🚨🚨🚨 los creditos no coinsiden")
+
+        except:
+          update.message.reply_text(words[2]+" y "+words[3]+' deberia ser un numero')    
+      else:
+        update.message.reply_text("no se ecuentra el servicio") #poner lista de servicios
+      
+      update.message.reply_text("El precio del dolar es "+str(dolarValue)+"cup")
       
 def main():
   ############################# Handlers #########################################
@@ -92,6 +115,7 @@ def main():
   dp.add_handler(CommandHandler('help', help))
   dp.add_handler(CommandHandler('cred', calc))
   dp.add_handler(CommandHandler('dolar', dolar))
+  dp.add_handler(CommandHandler('rest', rest))
   initializeDB()
 
   updater.start_webhook(listen="0.0.0.0",
