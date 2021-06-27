@@ -102,6 +102,21 @@ def rest(update: Update, context: CallbackContext):
           update.message.reply_text(words[2]+" y "+words[3]+' deberia ser un numero')    
       else:
         update.message.reply_text("no se ecuentra el servicio") #poner lista de servicios
+
+def set(update: Update, context: CallbackContext):
+      words = update.message['text'].split()
+      message = "Comando incorrecto"
+      if len(words)<3:
+        update.message.reply_text(message)
+      elif (words[1] in creditsValues):
+        try:
+            x = float(words[2])
+            db.update(words[1],words[2])
+            update.message.reply_text("Actualizado correctamente")
+        except:
+          update.message.reply_text(words[2]+' deberia ser un numero')    
+      else:
+        update.message.reply_text("no se ecuentra el servicio") #poner lista de servicios
       
       
 def main():
@@ -115,6 +130,7 @@ def main():
   dp.add_handler(CommandHandler('cred', calc))
   dp.add_handler(CommandHandler('dolar', dolar))
   dp.add_handler(CommandHandler('rest', rest))
+  dp.add_handler(CommandHandler('set', set))
   initializeDB()
 
   updater.start_webhook(listen="0.0.0.0",
