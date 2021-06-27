@@ -104,6 +104,24 @@ def rest(update: Update, context: CallbackContext):
       else:
         update.message.reply_text("no se ecuentra el servicio") #poner lista de servicios
 
+def sum(update: Update, context: CallbackContext):
+      words = update.message['text'].split()
+      message = "Comando incorrecto"
+      if len(words)<3:
+        update.message.reply_text(message)
+      elif (words[1] in creditsValues):
+        credO = db.getCredByModel(words[1])
+        try:
+            credc = float(words[2])
+            y=str(float(credO)+credc)
+            db.update(words[1],float(credO)+credc)
+            update.message.reply_text("quedan "+y+' creditos')
+        except:
+          update.message.reply_text(words[2]+" y "+words[3]+' deberia ser un numero')    
+      else:
+        update.message.reply_text("no se ecuentra el servicio") #poner lista de servicios
+
+
 def set(update: Update, context: CallbackContext):
       words = update.message['text'].split()
       message = "Comando incorrecto"
@@ -132,6 +150,7 @@ def main():
   dp.add_handler(CommandHandler('dolar', dolar))
   dp.add_handler(CommandHandler('rest', rest))
   dp.add_handler(CommandHandler('set', set))
+  dp.add_handler(CommandHandler('sum', sum))
   initializeDB()
 
   updater.start_webhook(listen="0.0.0.0",
