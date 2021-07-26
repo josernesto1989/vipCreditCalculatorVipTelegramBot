@@ -45,7 +45,7 @@ def start(update: Update, context: CallbackContext):
   #                           reply_markup=main_menu_keyboard())
 
 def help(update: Update, context: CallbackContext):
-  text = "Los comandos disponibles son:\n"
+  text = "Version: 2.0\nLos comandos disponibles son:\n"
   text = text + "\n/help para este menú"
   text = text + "\n/cred <servicio> <cantidad de creditos>"
   text = text + "\n/dolar para saber el precio del dolar"
