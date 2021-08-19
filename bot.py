@@ -34,7 +34,8 @@ creditsValues = {
     "laelo":0.07,
     "suprogen": 1.24,
     "suprospr": 1.24,
-    "magict":1.1    
+    "magict":1.1,
+    "samhub":1       
 }
 
 # def initializeDB():
