@@ -22,15 +22,15 @@ TOKEN = '1572067631:AAHPjo2HgBnfPKIii7zg9Q63YHTPEt5OKsg'
 dolarValue = 63.0
 
 creditsValues = {
-    "magma": 1.02,
+    "magma": 1,
     "z3x": 1.145,
     "oct":0.115,
-    "chim": 0.124,
-    "samst":0.67,
-    "samcr":1.49,
-    "tunlock":0.59,
+    "chim": 0.122,
+    "samst":1.47,
+    "samcr":1.47,
+    "tunlock":0.42,
     "tmbk":0.69,
-    "motokey":1.09,
+    "motokey":1.11,
     "laelo":0.07,
     "suprogen": 1.24,
     "suprospr": 1.24,
