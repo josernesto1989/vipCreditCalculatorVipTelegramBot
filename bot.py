@@ -22,7 +22,7 @@ TOKEN = '1572067631:AAHPjo2HgBnfPKIii7zg9Q63YHTPEt5OKsg'
 dolarValue = 63.0
 
 creditsValues = {
-    "magma": 1,
+    "magma": 1.00,
     "z3x": 1.145,
     "oct":0.115,
     "chim": 0.122,
