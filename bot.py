@@ -22,7 +22,7 @@ TOKEN = '1572067631:AAHPjo2HgBnfPKIii7zg9Q63YHTPEt5OKsg'
 dolarValue = 65.0
 
 creditsValues = {
-    "magma": 1,
+    "magma": 1.00,
     "z3x": 1.145,
     "oct":0.115,
     "chim": 0.122,
@@ -56,7 +56,7 @@ def start(update: Update, context: CallbackContext):
   #                           reply_markup=main_menu_keyboard())
 
 def help(update: Update, context: CallbackContext):
-  text = "Ver: 2.0\nLos comandos disponibles son:\n"
+  text = "Version: 2.0\nLos comandos disponibles son:\n"
   text = text + "\n/help para este menú"
   text = text + "\n/cred <servicio> <cantidad de creditos>"
   text = text + "\n/dolar para saber el precio del dolar"
