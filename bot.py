@@ -19,7 +19,7 @@ TOKEN = '1572067631:AAHPjo2HgBnfPKIii7zg9Q63YHTPEt5OKsg'
 #db = DBFirebaseManager()
 
 
-dolarValue = 71.0
+dolarValue = 73.0
 
 creditsValues = {
     "magma": 1.00,
